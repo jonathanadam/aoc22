@@ -7,3 +7,6 @@ splitOn a l@(x:xs)
   | otherwise = let (h, t) = break (a==) l in h:(splitOn a t)
 
 stringToInt x = read x ::Int 
+
+groupByNs _ [] = []
+groupByNs n l = (take n l):(groupByNs n (drop n l))
